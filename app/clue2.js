@@ -10,7 +10,7 @@
 // output: 4
 
 function returnIndex(arr, str) {
-  // TODO your code here
+  return returnIndex.length
 }
 
 //-------------------------------------------
