@@ -10,7 +10,7 @@
 // output: 4
 
 function returnIndex(arr, str) {
-  return returnIndex.length
+  return arr.indexOf(str)
 }
 
 //-------------------------------------------
@@ -23,7 +23,7 @@ function returnIndex(arr, str) {
 // output: true
 
 function hasName(arr, name) {
-  // TODO your code here
+  return arr.includes(name)
 }
 
 //-------------------------------------------
@@ -43,7 +43,17 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
-  // TODO YOUR CODE HERE
+  // this itterates over the staff array, and finds the "PERSON" object where the object.id matches the "id" passed into the function and saves it to "found"
+  // NOTE i used a find here and it worked
+  let found = staff.find(person => person.id == id)
+  // This check to make sure a person object was found, since if none was found, staff.find would have returned "undefined", a falsey value.
+  if (found) {
+    // returns the found person if found
+    return found
+  } else {
+    // else return error object that was asked for
+    return { error: "No user with that id." }
+  }
 }
 
 //-------------------------------------------
